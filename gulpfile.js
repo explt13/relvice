@@ -5,10 +5,11 @@ import { path } from './gulp/config/path.js';
 // plugins import
 import { plugins } from './gulp/config/plugins.js';
 
-
+console.log(process.argv)
 global.app = {
     isBuild: process.argv.includes('--build'),
-    isDev: !process.argv.includes('--build'),
+    isBuildTest: process.argv.includes('--build-test'),
+    isDev: !process.argv.includes('--build') && !process.argv.includes('--build-test'),
     path: path,
     gulp: gulp,
     plugins: plugins,
@@ -37,15 +38,16 @@ function watcher(){
 export { svgSprites }
 
 const fonts = gulp.series(otfToTtf, ttfToWoff, fontsStyle)
-
 const mainTasks = gulp.series(fonts, gulp.parallel(files, html, scss, js, images));
 
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
+const buildTEST = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 const build = gulp.series(reset, mainTasks)
 const deployZIP = gulp.series(reset, mainTasks, zip)
 const deployFTP = gulp.series(reset, mainTasks, ftp)
 
 export { dev }
+export { buildTEST }
 export { build }
 export { deployZIP }
 export { deployFTP }
