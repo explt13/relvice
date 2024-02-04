@@ -1,17 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-    @@include('html/head.html', {
-        "title": "Relvice"
-    })
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.min.css"/>
+    <title>Relvice</title>
+</head>
 
     <body>
         <div class="wrapper">
             <main class="page">
                 <div class="container">
-                    @@include('html/header.html')
+                    <header class="header">
+    <div class="container">
+        <div class="header__row">
+            <span class="header__brand">
+                Relvice
+            </span>
+            <nav class="header__menu menu">
+                <div class="menu__icon icon-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="menu__body">
+                    <ul class="menu__list">
+                        <li><a href="" class="menu__link">Home</a></li>
+                        <li><a href="" class="menu__link">Product</a></li>
+                        <li><a href="" class="menu__link">Pricing</a></li>
+                        <li><a href="" class="menu__link">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+
                     <div class="main-screen">
                         <div class="main-screen__bg ibg">
-                            <img src="@img/cover.png" alt="main-screen-img">
+                            <img src="img/cover.png" alt="main-screen-img">
                         </div>
                         <div class="main-screen__content">
                             <div class="main-screen__row">
@@ -31,21 +59,21 @@
                             <div class="main-screen__row main-screen__row_three">
                                 <div class="main-screen__column">
                                     <div class="main-screen__card card">
-                                        <div class="card__icon"><img src="@img/case.svg" alt="case-icon"></div>
+                                        <div class="card__icon"><img src="img/case.svg" alt="case-icon"></div>
                                         <div class="card__title">Environmental Consulting</div>
                                         <div class="card__text">We focus on ergonomics and meeting you where you work. </div>
                                     </div>
                                 </div>
                                 <div class="main-screen__column">
                                     <div class="main-screen__card card">
-                                        <div class="card__icon"><img src="@img/shop.svg" alt="shop-icon"></div>
+                                        <div class="card__icon"><img src="img/shop.svg" alt="shop-icon"></div>
                                         <div class="card__title">Finance and consultancy</div>
                                         <div class="card__text">Just type what's on your mind and we'll get you there.</div>
                                     </div>
                                 </div>
                                 <div class="main-screen__column">
                                     <div class="main-screen__card card">
-                                        <div class="card__icon"><img src="@img/notebook.svg" alt="notebook-icon"></div>
+                                        <div class="card__icon"><img src="img/notebook.svg" alt="notebook-icon"></div>
                                         <div class="card__title">Financial Services Consulting</div>
                                         <div class="card__text">the quick fox jumps over the lazy dog.</div>
                                     </div>
@@ -61,28 +89,28 @@
                         <div class="achievements__row achievements__row_cards">
                             <div class="achievements__column">
                                 <div class="achievements__card card">
-                                    <div class="card__icon"><img src="@img/groupPeople.svg" alt="icon-group-people"></div>
+                                    <div class="card__icon"><img src="img/groupPeople.svg" alt="icon-group-people"></div>
                                     <div class="card__title">972 +</div>
                                     <div class="card__text">Consumer Products</div>
                                 </div>
                             </div>
                             <div class="achievements__column">
                                 <div class="achievements__card card">
-                                    <div class="card__icon"><img src="@img/tendention.svg" alt="icon-tendention"></div>
+                                    <div class="card__icon"><img src="img/tendention.svg" alt="icon-tendention"></div>
                                     <div class="card__title">181 +</div>
                                     <div class="card__text">Financial Services</div>
                                 </div>
                             </div>
                             <div class="achievements__column">
                                 <div class="achievements__card card">
-                                    <div class="card__icon"><img src="@img/medal.svg" alt="icon-medal"></div>
+                                    <div class="card__icon"><img src="img/medal.svg" alt="icon-medal"></div>
                                     <div class="card__title">98%</div>
                                     <div class="card__text">Environmental</div>
                                 </div>
                             </div>
                             <div class="achievements__column">
                                 <div class="achievements__card card">
-                                    <div class="card__icon"><img src="@img/case.svg" alt="icon-case"></div>
+                                    <div class="card__icon"><img src="img/case.svg" alt="icon-case"></div>
                                     <div class="card__title">746 +</div>
                                     <div class="card__text">Business & Finance</div>
                                 </div>
@@ -101,7 +129,7 @@
                                         <div class="block__title">A single source of truth</div>
                                         <div class="block__text">Newton thought that light was made up of particles, but then it was discovered </div>
                                     </div>
-                                    <div class="block__image"><img src="@img/advice_1.png" alt=""></div>
+                                    <div class="block__image"><img src="img/advice_1.png" alt=""></div>
                                 </div>
                             </div>
                             <div class="advice__column">
@@ -110,7 +138,7 @@
                                         <div class="block__title">Fastest way to organize</div>
                                         <div class="block__text">“Quantum mechanics” is the description of the behaviour of matter</div>
                                     </div>
-                                    <div class="block__image"><img src="@img/advice_2.png" alt=""></div>
+                                    <div class="block__image"><img src="img/advice_2.png" alt=""></div>
                                 </div>
                             </div>
                             <div class="advice__column">
@@ -119,7 +147,7 @@
                                         <div class="block__title">Fastest way to take action</div>
                                         <div class="block__text">They describe a universe consisting of bodies moving</div>
                                     </div>
-                                    <div class="block__image"><img src="@img/advice_3.png" alt=""></div>
+                                    <div class="block__image"><img src="img/advice_3.png" alt=""></div>
                                 </div>
                             </div>
                             <div class="advice__column">
@@ -128,7 +156,7 @@
                                         <div class="block__title">Work better together</div>
                                         <div class="block__text">They finally obtained a consistent description of the behaviour</div>
                                     </div>
-                                    <div class="block__image"><img src="@img/advice_4.png" alt=""></div>
+                                    <div class="block__image"><img src="img/advice_4.png" alt=""></div>
                                 </div>
                             </div>
                         </div>
@@ -136,7 +164,8 @@
                 </div>
             </main>
         </div>
-        @@include('html/scripts.html')
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
         <script src="js/app.min.js"></script>
     </body>
 </html>

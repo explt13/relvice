@@ -12,31 +12,31 @@ export const images = () => {
         .pipe(app.plugins.newer(app.path.build.images))
         .pipe(
             app.plugins.if(
-                app.isBuild,
+                app.isBuild || app.isBuildTest,
                 webp()
             )
         )
         .pipe(
             app.plugins.if(
-                app.isBuild,
+                app.isBuild || app.isBuildTest,
                 app.gulp.dest(app.path.build.images)
             )
         )
         .pipe(
             app.plugins.if(
-                app.isBuild,
+                app.isBuild || app.isBuildTest,
                 app.gulp.src(app.path.src.images)
             )
         )
         .pipe(
             app.plugins.if(
-                app.isBuild,
+                app.isBuild || app.isBuildTest,
                 app.plugins.newer(app.path.build.images)
             )
         )
         .pipe(
             app.plugins.if(
-                app.isBuild,
+                app.isBuild || app.isBuildTest,
                 imagemin({
                     progressive: true,
                     svgoPlugins: [{ removeViewBox: false }],

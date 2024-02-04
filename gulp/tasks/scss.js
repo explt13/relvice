@@ -22,13 +22,13 @@ export const scss = () => {
     }))
     .pipe(
         app.plugins.if(
-            app.isBuild,
+            app.isBuild || app.isBuildTest,
             groupCssMediaQueries()
         )
     )
     .pipe(
         app.plugins.if(
-            app.isBuild,
+            app.isBuild || app.isBuildTest,
             webpcss({
                 webpClass: '.webp',
                 noWebpClass: '.no-webp',
@@ -37,7 +37,7 @@ export const scss = () => {
     )
     .pipe(
         app.plugins.if(
-            app.isBuild,
+            app.isBuild || app.isBuildTest,
             autoprefixer({
                 grid: true,
                 overrideBrowserslist: ["last 3 versions"],
@@ -45,17 +45,10 @@ export const scss = () => {
             })
         )
     )
-    .pipe(
-        app.plugins.if(
-            app.isBuild,
-            cleanCss()
-        )
-    )
-
     .pipe(app.gulp.dest(app.path.build.css))
     .pipe(
         app.plugins.if(
-            app.isBuild,
+            app.isBuild || app.isBuildTest,
             cleanCss()
         )
     )
