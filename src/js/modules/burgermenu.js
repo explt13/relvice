@@ -1,5 +1,5 @@
 
-$(document).ready(() => {
+export const burgerMenu = () =>{
     $('.icon-menu').click(function(event){
         $(this).toggleClass('active');
         $('.menu__body').toggleClass('active')
@@ -16,4 +16,5 @@ $(document).ready(() => {
 
         }
     });
-})
+}
+    

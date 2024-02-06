@@ -23,8 +23,9 @@ import { server } from './gulp/tasks/server.js';
 import { scss } from './gulp/tasks/scss.js';
 import { js } from './gulp/tasks/js.js';
 import { images } from './gulp/tasks/images.js';
+import { videos } from './gulp/tasks/videos.js';
 import { otfToTtf, ttfToWoff, fontsStyle } from './gulp/tasks/fonts.js';
-import { svgSprites } from './gulp/tasks/svgsprites.js';
+import { svgSprites } from './gulp/tasks/svgSprites.js';
 import { zip } from './gulp/tasks/zip.js';
 import { ftp } from './gulp/tasks/ftp.js';
 
@@ -34,11 +35,12 @@ function watcher(){
     gulp.watch(path.watch.scss, scss);
     gulp.watch(path.watch.js, js);
     gulp.watch(path.watch.images, images);
+    gulp.watch(path.watch.videos, videos)
 }
 export { svgSprites }
 
 const fonts = gulp.series(otfToTtf, ttfToWoff, fontsStyle)
-const mainTasks = gulp.series(fonts, gulp.parallel(files, html, scss, js, images));
+const mainTasks = gulp.series(fonts, gulp.parallel(files, html, scss, js, images, videos));
 
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 const buildTEST = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));

@@ -12,6 +12,7 @@ export const html = () => {
         ))
         .pipe(fileInclude())
         .pipe(app.plugins.replace(/@img\//g, 'img/'))
+        .pipe(app.plugins.replace(/@video\//g, 'videos/'))
         .pipe(
             app.plugins.if(
                 app.isBuild || app.isBuildTest,

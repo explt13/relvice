@@ -1,14 +1,13 @@
 .header {
     height: 104px;
     position: relative;
-
+    z-index: 4;
 
     // .header__row
     &__row {
         display: flex;
-        position: absolute;
+        position: relative;
         top: calc(50% - 16px);
-
     }
     
     // .header__brand
@@ -32,8 +31,8 @@
     &__menu {
     }
     .container{
-        padding: 0;
         height: 100%;
+        position: relative;
 
     }
 
