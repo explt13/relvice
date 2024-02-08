@@ -2,7 +2,7 @@
 @import './abstract/ibg';
 @import 'variables';
 @import './util/reset';
-
+@import './abstract/slick-slider';
 
 body{
     font-family: Montserrat;
@@ -137,7 +137,6 @@ body{
         &__row_three{
             flex-direction: column;
             margin: 0 -15px;
-
         }
         &__column{
             margin: 0 0 10px 0px;
@@ -146,8 +145,11 @@ body{
         &__title{
             font-size: 48px;
         }
-
-
+    }
+    @media screen and (max-width: 600px){
+        // &__row_three{
+        //     margin: 0 -30px;
+        // }
     }
 }
 
@@ -341,8 +343,9 @@ body{
         &__title{
             font-size: 32px;
         }
-        &__row{
-            margin: 0 0 30px 0;
+        &__row_cards{
+            margin: 0 -30px 30px;
+            row-gap: 0;
         }
         &__column{
             flex: 0 1 100%;
@@ -416,6 +419,7 @@ body{
             flex: 0 1 calc(50% - 15px);
         }
 
+
         &__title{
             font-size: 36px;
         }
@@ -435,6 +439,12 @@ body{
         }
         &__title{
             font-size: 32px;
+        }
+        &__text{
+            padding: 0 10px;
+        }
+        .container{
+            padding: 0
         }
     }
 }
@@ -638,6 +648,11 @@ body{
             margin: 0 0 10px 0;
         }
     }
+    @media screen and (max-width: 600px){
+        &__column_v{
+            margin: 0 -30px;
+        }
+    }
 }
 
 .column-information {
@@ -821,6 +836,11 @@ body{
             
         }
     }
+    @media screen and (max-width: 600px){
+        .container{
+            padding: 0;
+        }   
+    }
 }
 
 
@@ -986,13 +1006,21 @@ body{
     @media screen and (max-width: 1100px) {
         &__row {
             margin: 0 0 60px 0;
+            &_three-col{
+                margin: 0
+            }
         }
+        .container{
+            padding: 50px 0;
+        }
+        
     }
     @media screen and (max-width: 925px) {
         &__row {
             margin: 0 0 50px 0;
             &_three-col{
                 flex-wrap: wrap;
+                margin: 0
             }
         }
         &__column {
@@ -1003,7 +1031,7 @@ body{
             }
         }
         .container{
-            padding: 60px 0;
+            padding: 0px 0;
         }
         
         

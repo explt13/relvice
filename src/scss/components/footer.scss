@@ -23,6 +23,21 @@
     &__row {
         display: flex;
     }
+
+    @media screen and (max-width: 870px){
+        &__content {
+            .container{
+                padding: 40px 20px;
+            }
+        }
+    }
+    @media screen and (max-width: 767px){
+        &__header {
+            .container{
+                padding: 20px 20px;
+            }
+        }
+    }
 }
 
 .row-header {
@@ -65,6 +80,13 @@
         text-align: center;
         color: $light-text-color;
         cursor: pointer;
+    }
+    @media screen and (max-width: 767px){
+        flex-direction: column;
+        &__column:last-child{
+            margin: 15px 0 0 0;
+            padding: 0
+        }
     }
 }
 .row-content {
@@ -112,15 +134,49 @@
 
     @media screen and (max-width: 870px) {
         flex-direction: column;
+        &__column{
+            &:nth-child(1n + 2){
+                margin-top: 15px;
+            }
+        }
+        &__title{
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 5px;
+            
+        }
         &__title::after{
-            // content: url("@img/arrow_down.svg");
+            content: "";
+            display: block;
+            background-image: url("@img/arrow_down.svg");
+            background-size: 30px 30px;
+            background-repeat: no-repeat;
 
+            left: 5px;
+            top: 0;
             width: 30px;
             height: 30px;
+            filter: invert(93%) sepia(93%) saturate(0%) hue-rotate(271deg) brightness(106%) contrast(106%);
 
+            transition: 0.2s ease-in-out;
+            
+        }
+        &__title.active::after{
+            transform: scaleY(-1);
         }
         &__list{
+            // visibility: hidden;
             display: none;
+            height: 0;
+            margin: 0;
+            opacity: 0;
+            // &.active{
+            //     height: 126px;
+            //     opacity: 1;
+            // animation: showContent 0.5s linear forwards;
+            // }
+
         }
     }
 
@@ -143,9 +199,32 @@
         width: 100%;
         display: flex;
         column-gap: 20px;
+        max-height: 24px;
         justify-content: center;
         img{
             cursor: pointer;
         }
     }
+
+    @media screen and (max-width: 540px) {
+        flex-wrap: wrap;
+        &__socials{
+            order: 0;
+            max-width: fit-content;
+            margin-bottom: 10px;
+        }
+        &__text{
+            order: 1;
+        }
+        
+    }
+}
+
+@keyframes showContent {
+    0%{max-height: 0px; opacity: 0;}
+    100%{max-height: 200px; opacity: 1;}
+}
+@keyframes closeContent {
+    0%{max-height: 200px; opacity: 1;}
+    100%{max-height: 0px; opacity: 0;}
 }
