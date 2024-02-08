@@ -1,4 +1,3 @@
-
 export const burgerMenu = () =>{
     $('.icon-menu').click(function(event){
         $(this).toggleClass('active');

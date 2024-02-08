@@ -1,41 +1,121 @@
+.slider__item{
+    // height: 100% // if row > 0
+}
+.slick-slider{}
 
-.slick-slider{
-    .slick-slider{}
+.slick-slider.slick-initialized{}
 
-    .slick-slider.slick-initialized{}
+.slick-slider.slick-dotted{}
 
-    .slick-slider.slick-dotted{}
+.slick-list {
+    overflow: hidden;
+}
 
-    .slick-list {}
+.slick-track{
+    display: flex;
+    // align-items: flex-start; // for adaptive height
+}
 
-    .slick-track{}
+.slick-slide{
+    height: inherit;
+    >
+    div{
+        height: 100%;
+    }
+}
 
-    .slick-slide{}
+.slick-slide.slick-active{}
 
-    .slick-slide.slick-active{}
+.slick-slide.slick-current{}
 
-    .slick-slide.slick-current{}
+.slick-slide.slick-center{}
 
-    .slick-slide.slick-center{}
+.slick-slide.slick-cloned{}
 
-    .slick-slide.slick-cloned{}
+.slick-arrow{}
 
-    .slick-arrow{}
+.slick-arrow.slick-prev{}
 
-    .slick-arrow.slick-prev{}
+.slick-arrow.slick-next{}
 
-    .slick-arrow.slick-next{}
+.slick-arrow.slick-disabled{}
 
-    .slick-arrow.slick-disabled{}
+.slick-dots{
+    li{
+        &.slick-active{
+            button{}
+        }
+        button{}
+    }
+}
+.slider-achievements{
+    .slick-dots{
+   
+        display: flex;
+        justify-content: center;
+        li{
+            &.slick-active{
+                button{
+                    background-color: #c8c8c8;
+                }
+                
+            }
+            margin: 0 5px;
+            list-style-type: none;
+            button{
+                background-color: transparent;
+                border: 1px solid #c8c8c8;
+    
+                font-size: 0;
+                width: 11px;
+                height: 11px;
+                border-radius: 50%;
+            }
+        }
+    }
+    
+}
+.slider-advice{
 
-    .slick-dots{}
+    &__item{
+        width: auto!important;
+    }
+    .slick-list{
+        padding: 0!important;
+    }
+    .slick-dots{
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        li{
+            &.slick-active{
+                button{
+                    background-color: #c8c8c8;
+                }
+                
+            }
+            margin: 0 5px;
+            list-style-type: none;
+            button{
+                background-color: transparent;
+                border: 1px solid #c8c8c8;
+    
+                font-size: 0;
+                width: 11px;
+                height: 11px;
+                border-radius: 50%;
+            }
+        }
+    }
+    
+}
 
-    .slick-dots li{}
-
-    .slick-dots li.slick-active{}
-
-    .slider .slick-dots li.slick-active button{}
-
-    .slick-dots li button{}
-
+.slider-companies{
+    .slick-track{
+        column-gap: 10px;
+    }
+    .slick-slide{
+        display: flex;
+        justify-content: center;
+    }
 }
