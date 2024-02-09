@@ -95,6 +95,10 @@ export const slickSlider = () => {
                 vertical: false, // use display block on slick track
                 verticalSwiping: false,
             })
+        } else {
+            $('.achievements__row_cards').slick('unslick')
+            $('.advice__row_block').slick('unslick')
+            $('.trusted__companies').slick('unslick')
         }
     }
     $(window).on('resize', setSlider)
