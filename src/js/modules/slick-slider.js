@@ -3,39 +3,40 @@ export const slickSlider = () => {
     const setSlider = function(){
         const mql = window.matchMedia('(max-width: 600px)')
         if (mql.matches){
-            $('.achievements__row_cards').addClass('slider-achievements')
-            // $('.achievements__row_cards').children().addClass('slider-item') for row porps
-            $('.slider-achievements').slick({
-                arrows: false,
-                dots: true,
-                adaptiveHeight: false, // use align-items: flex-start on slick-track
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                speed: 1000,
-                easing: 'ease',
-                infinite: true,
-                initialSlide: 0,
-                autoplay: true,
-                autoplaySpeed: 1500,
-                pauseOnFocus: true,
-                pauseOnHover: true,
-                pauseOnDotHover: true,
-                draggable: true,
-                swipe: true,
-                touchThreshold: 10,
-                touchMove: true,
-                waitForAnimate: true,
-                centerMode: true,
-                variableWidth: false,
-                rows: 0, // creates empty div
-                slidesPerRow: 1,
-                vertical: false, // use display block on slick track
-                verticalSwiping: false,
-                
-            });
+            $('.achievements__row_cards').addClass('slider-achievements').children().addClass('slider-item')
+            if($('.slider-achievements').length > 0){
+                $('.slider-achievements').slick({
+                    arrows: false,
+                    dots: true,
+                    adaptiveHeight: false, // use align-items: flex-start on slick-track
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    speed: 1000,
+                    easing: 'ease',
+                    infinite: true,
+                    initialSlide: 0,
+                    autoplay: true,
+                    autoplaySpeed: 1500,
+                    pauseOnFocus: true,
+                    pauseOnHover: true,
+                    pauseOnDotHover: true,
+                    draggable: true,
+                    swipe: true,
+                    touchThreshold: 10,
+                    touchMove: true,
+                    waitForAnimate: true,
+                    centerMode: true,
+                    variableWidth: false,
+                    rows: 0, // creates empty div
+                    slidesPerRow: 1,
+                    vertical: false, // use display block on slick track
+                    verticalSwiping: false,
+                    
+                });
+            }
+            
 
             $('.advice__row_block').addClass('slider-advice').children().addClass('slider-advice__item')
-      
             $('.slider-advice').slick({
                 arrows: false,
                 dots: true,

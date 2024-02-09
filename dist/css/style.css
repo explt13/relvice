@@ -150,7 +150,7 @@ body {
 }
 
 .slider-companies .slick-track {
-  column-gap: 10px;
+  column-gap: 30px;
 }
 .slider-companies .slick-slide {
   display: flex;
