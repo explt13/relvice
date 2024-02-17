@@ -5,6 +5,9 @@ export const slickSlider = () => {
         if (mql.matches){
             $('.achievements__row_cards').addClass('slider-achievements').children().addClass('slider-item')
             if($('.slider-achievements').length > 0){
+                if ($('.slider-achievements').hasClass('slick-slider')){
+                    return 0;
+                }
                 $('.slider-achievements').slick({
                     arrows: false,
                     dots: true,
@@ -37,6 +40,9 @@ export const slickSlider = () => {
             
 
             $('.advice__row_block').addClass('slider-advice').children().addClass('slider-advice__item')
+            if ($('.slider-advice').hasClass('slick-slider')){
+                return 0;
+            }
             $('.slider-advice').slick({
                 arrows: false,
                 dots: true,
@@ -67,6 +73,9 @@ export const slickSlider = () => {
             });
 
             $('.trusted__companies').addClass('slider-companies')
+            if ($('.slider-companies').hasClass('slick-slider')){
+                return 0;
+            }
             $('.slider-companies').slick({
                 arrows: false,
                 dots: false,
@@ -96,9 +105,18 @@ export const slickSlider = () => {
                 verticalSwiping: false,
             })
         } else {
-            $('.achievements__row_cards').slick('unslick')
-            $('.advice__row_block').slick('unslick')
-            $('.trusted__companies').slick('unslick')
+            if($('.achievements__row_cards').hasClass('slick-slider')){
+                $('.achievements__row_cards').slick('unslick')
+            }
+            if($('.advice__row_block').hasClass('slick-slider')){
+                $('.advice__row_block').slick('unslick')
+            }
+            if($('.trusted__companies').hasClass('slick-slider')){
+                $('.trusted__companies').slick('unslick')
+            }
+           
+            
+            
         }
     }
     $(window).on('resize', setSlider)
