@@ -955,7 +955,7 @@ body{
 //------------------------ contact ---------------------------//
 
 .contact {
-    padding: 0 0 68px 0;
+    padding: 80px 0px 68px 0;
     background-color: #fafafa;
     text-align: center;
     // .contact__row
@@ -1000,22 +1000,21 @@ body{
     &__card {
     }
     .container{
-        padding: 80px 30px;
+        padding: 0 30px;
     }
 
     @media screen and (max-width: 1100px) {
+        padding: 50px 0 68px 0;
         &__row {
             margin: 0 0 60px 0;
             &_three-col{
                 margin: 0
             }
         }
-        .container{
-            padding: 50px 0;
-        }
         
     }
     @media screen and (max-width: 925px) {
+        padding: 30px 0 68px 0;
         &__row {
             margin: 0 0 50px 0;
             &_three-col{
@@ -1023,15 +1022,15 @@ body{
                 margin: 0
             }
         }
+        &__title{
+            font-size: 32px;
+        }
         &__column {
             flex: 0 1 100%;
             order: 1;
             &:nth-child(2){
                 order: 0;
             }
-        }
-        .container{
-            padding: 0px 0;
         }
         
         
