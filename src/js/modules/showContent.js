@@ -1,28 +1,39 @@
 export const showContent = () => {
-    let active = false;
-    $('.row-content__title').on('click', function(){
-        let height;
-        height = $(this).siblings().get(0).scrollHeight
-        
-        if (!active){
-            active = true;
-            $(this).addClass('active')
-            $(this).siblings().css('display', 'block').animate({
-                height: height ? height : '126px',
-                opacity: 1,
-            }, 500)
-            
-        } else if (active) {
-            $(this).removeClass('active')
-            $(this).siblings().animate({
-                height: 0,
-                opacity: 0,
-                margin: 0,
-            }, 500, function(){
-                $(this).css('display', 'none')
-            })
-            active = false;
-            
+    
+    const mql = window.matchMedia('(max-width: 1500px)')
+    const handleAccrd = () => {
+  
+        $('.row-content__title').on('click', function(event){
+            if (!($(this).hasClass('active'))){
+                $(this).addClass('active')
+                $(this).siblings().css('max-height', $(this).siblings().get(0).scrollHeight + "px")
+                
+            } else if ($(this).hasClass('active')) {
+                $(this).removeClass('active')
+                $(this).siblings().css('max-height', '0px')
+            }
+        })
+    }
+    if (mql.matches){
+        handleAccrd()
+    }
+
+    let isMqlMathces = mql.matches // false
+    $(window).on('resize', function(){
+        if (isMqlMathces !== mql.matches){ // if false === true => 
+            isMqlMathces = mql.matches;
+            if (isMqlMathces){
+                $('.row-content__title').each(function(){
+                    $(this).siblings().css({'max-height': '0px'})
+                })
+                handleAccrd()
+            } else if (!isMqlMathces){
+                $('.row-content__title').each(function(){
+                    $(this).off('click');
+                    $(this).siblings().css({'max-height': $(this).siblings().get(0).scrollHeight + "px"})
+                })
+            }
         }
-    })
+        
+    })   
 }

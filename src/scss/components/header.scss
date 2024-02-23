@@ -1,6 +1,7 @@
 .header {
     height: 104px;
-    position: relative;
+    position: absolute;
+    width: 100%;
     z-index: 4;
 
     // .header__row
@@ -19,7 +20,7 @@
         // line-height: 1.33333;
         letter-spacing: 0em;
         color: $text-color;
-        position: relative;
+        position: relaabaive;
         z-index: 5;
         transition: all 0.5s ease-in-out;
 
