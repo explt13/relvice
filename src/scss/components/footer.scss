@@ -166,17 +166,9 @@
             transform: scaleY(-1);
         }
         &__list{
-            // visibility: hidden;
-            display: none;
-            height: 0;
-            margin: 0;
-            opacity: 0;
-            // &.active{
-            //     height: 126px;
-            //     opacity: 1;
-            // animation: showContent 0.5s linear forwards;
-            // }
-
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
         }
     }
 
